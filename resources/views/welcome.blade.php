@@ -9,41 +9,38 @@
 </head>
 <body>
     
-    <div class="container d-flex justify-content-center mt-5">
-        <h1>Photos</h1>
-        <button class="btn btn-success">Create</button>
+    
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{route('photos.index')}}">Photos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{route('albums.index')}}">Albums</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{route('users.index')}}">Users</a>
+          </li>
+      </ul>
     </div>
+  </div>
+</nav>
+
+@yield('content')
 
 
-@foreach($photo as $data)
-    <table class="table mt-5">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">URL</th>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">{{$data->id}}</th>
-      <td>{{$data->url}}</td>
-      <td>{{$data->name}}</td>
-      <td>{{$data->description}}</td>
-      <td>
-        <button class="btn btn-info">Edit</button>
-        <button class="btn btn-warning">Show</button>
-        <button class="btn btn-danger">Delete</button>
-    </td>
-    </tr>
-  </tbody>
-</table>
-@endforeach
+
 
 
     <script src="{{asset('js/app.js')}}"></script>
 </body>
-</html>>
+</html>
 
